@@ -34,7 +34,7 @@ function getBackgroundImageUrl($biome)
 		'Sandblasted Corridors' => 'fallback.jpg',
 	];
 
-	$basePath = '/drg/img/bg/';
+	$basePath = 'img/bg/';
 
 	if (isset($biomeImages[$biome])) {
 		return $basePath . $biomeImages[$biome];
@@ -84,7 +84,7 @@ function renderMissionIcon($type)
 	}
 
 	if ($imagePath !== '') {
-		return '<img src="/drg/img/mission/' . $imagePath . '" width="60%" height="auto">';
+		return '<img src="img/mission/' . $imagePath . '" width="60%" height="auto">';
 	}
 
 	return '';
@@ -108,7 +108,7 @@ function renderAnomalyIcon($anomaly)
 	];
 
 	if (isset($anomalyIcons[$anomaly])) {
-		$iconPath = "/drg/img/mutator/" . $anomalyIcons[$anomaly];
+		$iconPath = "img/mutator/" . $anomalyIcons[$anomaly];
 		return '<img src="' . $iconPath . '" width="32px" height="auto" data-bs-toggle="tooltip" data-bs-placement="top" title="' . $anomaly . '">';
 	}
 
@@ -137,7 +137,7 @@ function renderWarningIcon($warning)
 	];
 
 	if (isset($warningIcons[$warning])) {
-		$iconPath = "/drg/img/warning/" . $warningIcons[$warning];
+		$iconPath = "img/warning/" . $warningIcons[$warning];
 		return '<img src="' . $iconPath . '" width="32px" height="auto" data-bs-toggle="tooltip" data-bs-placement="top" title="' . $warning . '">';
 	}
 

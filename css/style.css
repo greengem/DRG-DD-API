@@ -1,3 +1,5 @@
+/* INVESTIGATE - Can't use relative paths for fonts */
+
 @font-face {
 	font-family: Heavitas;
 	src: url(/drg/font/Heavitas.ttf);
