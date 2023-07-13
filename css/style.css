@@ -1,0 +1,36 @@
+@font-face {
+	font-family: Heavitas;
+	src: url(/drg/font/Heavitas.ttf);
+}
+@font-face {
+	font-family: Bebas;
+	src: url(/drg/font/BebasNeue-Regular.ttf);
+}
+body{
+	font-family: Bebas;
+}
+section{
+	padding-top: 200px; padding-bottom: 200px;
+}
+
+.card .mission-type img{
+	filter: drop-shadow(5px 5px 10px #000);
+	margin-bottom: 12px;
+}
+.card .card-body{
+	color: #111;
+}
+.card-footer{
+
+}
+.dd-titles, footer h4{
+	font-family: Heavitas;
+}
+footer section{
+	background: #111;
+	text-align: center;
+	padding: 100px 0;
+}
+.card p{
+	margin-bottom: 0px;
+}
