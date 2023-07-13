@@ -11,12 +11,8 @@ foreach ($variants as $variant) {
 <section style="background-image: url('<?php echo $backgroundImageUrl; ?>')" class="makeclassfordiffbackgrounds">
 	<div class="container text-center">
 		<div class="dd-titles">
-		<?php if ($biome == 'Glacial Strata') {
-			echo "<h2 style='color: #000;'>{$variant['type']}: {$variant['name']}</h2><p style='color: #000;'>{$variant['biome']}</p>";
-		} else {
-			echo "<h2>{$variant['type']}: {$variant['name']}</h2><p>{$variant['biome']}</p>";
-		}
-		?>
+			<h2><?php echo $variant['type'] . " - " . $variant['name'] ?></h2>
+			<p><?php echo $variant['biome']; ?></p>
 		</div>
 		
 		<div class="card-group">
