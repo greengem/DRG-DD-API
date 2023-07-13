@@ -22,16 +22,16 @@ $DeepDiveData = fetchJSONData('https://drgapi.com/v1/deepdives');
 function getBackgroundImageUrl($biome)
 {
 	$biomeImages = [
-		'Crystalline Caverns' => 'DRG_CrystalCaves_1080p.jpg',
-		'Salt Pits' => 'Wallpaper_Team_4k.jpg',
-		'Fungus Bogs' => 'DRG_FungusBogs_1080p.jpg',
-		'Radioactive Exclusion Zone' => 'DRG_RadioactiveZone_1080p.jpg',
-		'Dense Biozone' => 'DRG_DenseBiozone_1080p.jpg',
-		'Glacial Strata' => 'DRG_GlacialStrata_1080p.jpg',
-		'Hollow Bough' => 'Wallpaper_Team_4k.jpg',
-		'Azure Weald' => 'AzureWeald_Wallpaper16x9.jpg',
-		'Magma Core' => 'DRG_Magmacaves_1080p.jpg',
-		'Sandblasted Corridors' => 'Wallpaper_Team_4k.jpg',
+		'Azure Weald' => 'azure_weald.jpg',
+		'Crystalline Caverns' => 'crystal_caves.jpg',
+		'Dense Biozone' => 'dense_biozone.jpg',
+		'Fungus Bogs' => 'fungus_bogs.jpg',
+		'Glacial Strata' => 'glacial_strata.jpg',
+		'Hollow Bough' => 'fallback.jpg',
+		'Magma Core' => 'magma_caves.jpg',
+		'Radioactive Exclusion Zone' => 'radioactive_zone.jpg',
+		'Salt Pits' => 'fallback.jpg',
+		'Sandblasted Corridors' => 'fallback.jpg',
 	];
 
 	$basePath = '/drg/img/bg/';
@@ -48,37 +48,38 @@ function getBackgroundImageUrl($biome)
 
 
 //Determine which icon to use for the mission types.
+//TODO use exact matches instead of contains, cant find list of exact outputs
 function renderMissionIcon($type)
 {
 	$imagePath = '';
 
 	switch (true) {
-		case str_contains($type, 'Morkite'):
-			$imagePath = 'Mining_expedition_icon-2.webp';
-			break;
-		case str_contains($type, 'Mule'):
-			$imagePath = 'Salvage_icon-2.webp';
-			break;
-		case str_contains($type, 'Egg'):
-			$imagePath = 'Egg_collection_icon-2.webp';
-			break;
-		case str_contains($type, 'Escort'):
-			$imagePath = 'Escort_icon-2.webp';
+		case str_contains($type, 'Aquarq'):
+			$imagePath = 'point_extraction.webp';
 			break;
 		case str_contains($type, 'Black'):
-			$imagePath = 'Blackbox_icon-2.webp';
-			break;
-		case str_contains($type, 'Aquarq'):
-			$imagePath = 'Point_extraction_icon-2.webp';
-			break;
-		case str_contains($type, 'Refin'):
-			$imagePath = 'Refining_icon-2.webp';
-			break;
-		case str_contains($type, 'Sabotage'):
-			$imagePath = 'Sabotage_icon-2.webp';
+			$imagePath = 'blackbox.webp';
 			break;
 		case str_contains($type, 'Dread'):
-			$imagePath = 'Elimination_icon-2.webp';
+			$imagePath = 'elimination.webp';
+			break;
+		case str_contains($type, 'Egg'):
+			$imagePath = 'egg_collection.webp';
+			break;
+		case str_contains($type, 'Escort'):
+			$imagePath = 'escort.webp';
+			break;		
+		case str_contains($type, 'Morkite'):
+			$imagePath = 'mining_expedition.webp';
+			break;
+		case str_contains($type, 'Mule'):
+			$imagePath = 'salvage.webp';
+			break;
+		case str_contains($type, 'Refin'):
+			$imagePath = 'refining.webp';
+			break;
+		case str_contains($type, 'Sabotage'):
+			$imagePath = 'sabotage.webp';
 			break;
 	}
 
@@ -96,14 +97,14 @@ function renderMissionIcon($type)
 function renderAnomalyIcon($anomaly)
 {
 	$anomalyIcons = [
-		"Critical Weakness" => "Mutator_critical_weakness_icon.webp",
-		"Double XP" => "Mutator_triple_xp_icon.webp",
-		"Gold Rush" => "Mutator_gold_rush_icon.webp",
-		"Golden Bugs" => "Mutator_golden_bugs_icon.webp",
-		"Low Gravity" => "Mutator_low_gravity_icon.webp",
-		"Mineral Mania" => "Mutator_mineral_mania_icon.webp",
-		"Rich Atmosphere" => "Mutator_rich_atmosphere_icon.webp",
-		"Volatile Guts" => "Mutator_volatile_guts_icon.webp",	
+		"Critical Weakness" => "critical_weakness.webp",
+		"Double XP" => "triple_xp.webp",
+		"Gold Rush" => "gold_rush.webp",
+		"Golden Bugs" => "golden_bugs.webp",
+		"Low Gravity" => "low_gravity.webp",
+		"Mineral Mania" => "mineral_mania.webp",
+		"Rich Atmosphere" => "rich_atmosphere.webp",
+		"Volatile Guts" => "volatile_guts.webp",	
 	];
 
 	if (isset($anomalyIcons[$anomaly])) {
@@ -121,18 +122,18 @@ function renderAnomalyIcon($anomaly)
 function renderWarningIcon($warning)
 {
 	$warningIcons = [
-		"Cave Leech Cluster" => "Warning_cave_leech_cluster_icon.webp",
-		"Elite Threat" => "Warning_elite_threat_icon.webp",
-		"Exploder Infestation" => "Warning_exploder_infestation_icon.webp",
-		"Haunted Cave" => "Warning_haunted_cave_icon.webp",
-		"Lethal Enemies" => "Warning_lethal_enemies_icon.webp",
-		"Low Oxygen" => "Warning_low_oxygen_icon.webp",
-		"Mactera Plague" => "Warning_mactera_plague_icon.webp",
-		"Parasites" => "Warning_parasites_icon.webp",
-		"Regenerative Bugs" => "Warning_regenerative_bugs_icon.webp",
-		"Rival Presence" => "Warning_rival_presence_icon.webp",
-		"Shield Disruption" => "Warning_shield_disruption_icon.webp",
-		"Swarmageddon" => "Warning_swarmageddon_icon.webp",
+		"Cave Leech Cluster" => "cave_leech_cluster.webp",
+		"Elite Threat" => "elite_threat.webp",
+		"Exploder Infestation" => "exploder_infestation.webp",
+		"Haunted Cave" => "haunted_cave.webp",
+		"Lethal Enemies" => "lethal_enemies.webp",
+		"Low Oxygen" => "low_oxygen.webp",
+		"Mactera Plague" => "mactera_plague.webp",
+		"Parasites" => "parasites.webp",
+		"Regenerative Bugs" => "regenerative_bugs.webp",
+		"Rival Presence" => "rival_presence.webp",
+		"Shield Disruption" => "shield_disruption.webp",
+		"Swarmageddon" => "swarmageddon.webp",
 	];
 
 	if (isset($warningIcons[$warning])) {
