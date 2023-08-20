@@ -1,5 +1,5 @@
 <?php 
-$srvpath = '/var/www/html/drg/';
+$srvpath = __DIR__ . '/'; // Assuming this file is in the same directory as the included files
 include $srvpath . 'header.php';
 include $srvpath . 'nav.php';
 $variants = $DeepDiveData['variants'];
@@ -8,7 +8,7 @@ foreach ($variants as $variant) {
 	$backgroundImageUrl = getBackgroundImageUrl($biome);
 ?>
 	
-<section style="background-image: url('<?php echo $backgroundImageUrl; ?>')" class="makeclassfordiffbackgrounds">
+<section style="background-image: url('<?php echo $backgroundImageUrl; ?>')" class="wallpaper-section">
 	<div class="container text-center">
 		<div class="dd-titles">
 			<h2><?php echo $variant['type'] . " - " . $variant['name'] ?></h2>
