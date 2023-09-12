@@ -1,10 +1,10 @@
 @font-face {
 	font-family: Heavitas;
-	src: url(/font/Heavitas.ttf);
+	src: url('/font/Heavitas.ttf') format('truetype');
 }
 @font-face {
 	font-family: Bebas;
-	src: url(/font/BebasNeue-Regular.ttf);
+	src: url('/font/BebasNeue-Regular.ttf') format('truetype');
 }
 body{
 	font-family: Bebas;
